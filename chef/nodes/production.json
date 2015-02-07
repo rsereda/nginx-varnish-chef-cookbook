@@ -1,0 +1,30 @@
+{
+    "useradd": {
+        "username": "wwsc",
+        "password": "securepass",
+        "home": "/home/wwsc",
+        "ssh_keys": ["ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC2i0JyQjcJoLlLHVoDcvUdqj1tMrFYqDlj/MuuLV6cCWy8/zvHnQ95WRs8rl9sTBdg5P5ltTx/VbjCu5PfoSIVx9Dz9ww6PZdwWJv71NXQB5cORxct0hb/7y3IeZ5NrnCji3v8LHxLULTZhiO80y9fQtCOoPPfM4OnlPSRcWTZw3N4VTel5Nz5MHGHDMXgofIaEPZkaEAxntdecBemhJV9Yibvdlmf6QCD+ZkyJ553JECdWgrnCN+O4ZXNhcheNdg2NHqgFNQNiJIYGQTPg4irVZh8u84cUzOwW/6NNTzvq/3YuEILmIV7xsdx6PnMGG1CbuGlNLYSA5WGXCT6mxYD sereda.roman@gmail.com"]
+    },
+    "master": {"host": "10.181.73.105",
+			   "ssh_privat_key": "-----BEGIN RSA PRIVATE KEY-----MIIEowIBAAKCAQEArVKQWxACiZIhQhhFz1hFIZPNpuNkfpkYD+jIjiXYu9N4VHMvn5t7tJLYVvE5kEkBs06taltZreBKM6M6jijqbPnmIcQq8bybwS7wt9UxI/b9nnWEKQOkZ/QreAOExEHrXjlpBmKlVLjMGy/Q9MzcJFnSD8aB/DPgSBAdE+nWPd5b0mm78ny54ThQd2oP44M/SRSM6KHzM7ftMzWoNf4S6FRu/WmShaqENssGp6+S99HSEGsxYws33ONOU4tGuMWcjVOZ/AjTzyhQQIWfb3XORPgnVySCcvhIXKP0RAsgwBuwM2KNvmyTaiju6NoCj7lcr5ckms2SG7u0PK7kgxogwQIDAQABAoIBAELZ+7AEBtaFNKrHrfWBuHhxB/t87cAe0LciNGkPk/8uW9VG8HGBiT9m/GbceDV801kT2bOSNI7qWfR82xMGGRWbdfZEMcQ32WOz9UkSw/d5Ru2dqjIfo4QtG68YvFbujhgz0JyT4+0/sgoycUha0/Z5ZpqLGIvsfm+NN4n8wZPu07hq3i0aGxRxrqEX7/A5Mlv1dD4ACeGVgdbjc9nR3zVSunEckzlfX0OxdPbKO1G496h4HGssbK/XtCfN+fCBqBuQWzUQ+aBV/OLAGvQwazklOIl3dN1bMPEJIpxsbLDCetwmL271qYPmJbEQi45oU3foBviRxhD+2rYxxnL/p/kCgYEAzmBqJ391gcTqH3ti0pUfK2fSTvOis87TVUqaY2Duhz50M5CR3zwIUI+6ijAS8KTZt7j1k0QsH0PH4AV/Rg04vwoGo+lialAQ2Dr+y/+EgeP5QWqkMd+NJLcteUj0Do21JY+GRlEav/O+4oOQESBAVwfHSOImv4jcss8ZDZHrdv8CgYEA1v9+AQ5CBFV06FfRMHaLbUCj7cDwgNyA57+4JQomuhNNd+2CxMnMuvbCdUtnYhjBCVVVxKcD9g+dJHYCGcLJXCyBFtSl+s+mFy0S/e3Fg3S9VjBlMLT1uCbpBlFdbMOiuOp1P0sT9pGJ7v5kaOieIU0JAiN3vnkjY320A0BwKD8CgYEAyHWqZxdNYnGNIGtPQFEM57J++6V3wsQBTvWaJTHAP6oQYQ3qQzYitW4GubecjhbyS5zjHNq5KN1DxnxQdhDdr+LjNE+8Apwm4IHdgPV/FlQEhuA5ASCuDp3HE+oi9gf7jrJssNyS6SSvo4I7bAcxt9ecYVUaYi1kgmLbaOz2FK0CgYA0VbMFbMQTK/4uRJouUtzztkVxLYMdyw8x2pBnq8Xri6FS7STk5D6K0GBbjwRWc7IhpH0hRoqHThuxcWxneuvrHQY7WX4hxIQophc2aremnTctkNBA//vEXOxiVlIIlMK6gpAR3SO55ImP/KrSgrVjY84qkBmo6vH7WPEFzZy/nwKBgCrMypYk6+avsr0E8oW6IlvbhIxPl931Yq6C+P9WRO8rhktP/F7tfxBI8g2vPnEsGD+UfInZSyWdQEGjJz13uyvG8e8whjtcFvOPlXwsUpFIlYD+9U4ecaNRFkXR8JMZeZKBwiEFfcGQ5V+is56jG6vZifJZVr3VR67DKbxWjvst-----END RSA PRIVATE KEY-----"
+				},
+    "vhosts": [
+		"www.kienzle1822.com" , "test.kienzle1822.com" ,"www.kienze.net", "www.poseidon.watches.com" , "shop.poseidon.watches.com"
+
+		],
+	"active_vhosts": [
+		"www.kienzle1822.com" , "www.kienze.net", "www.poseidon.watches.com" 
+		],
+	
+    "run_list": [
+		"recipe[ubuntu::deactivete_apache]",
+        "recipe[ubuntu::useradd]",
+        "recipe[ubuntu::git-core]",
+        "recipe[ubuntu::nginx]",
+        "recipe[ubuntu::php-fpm]",
+		"recipe[ubuntu::varnish]",
+		"recipe[ubuntu::lsyncd]",
+        "recipe[ubuntu]"
+    ]
+}
+

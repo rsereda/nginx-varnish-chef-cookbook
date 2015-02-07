@@ -1,0 +1,17 @@
+backend default {
+    .host = "127.0.0.1";
+    .port = "8080";
+}
+
+acl purge {
+        "localhost";
+}
+  
+
+
+
+
+sub vcl_recv {
+  set req.backend = default;
+  return(pass);
+}

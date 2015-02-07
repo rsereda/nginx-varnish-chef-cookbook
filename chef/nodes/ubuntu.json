@@ -1,0 +1,26 @@
+{
+    "useradd": {
+        "username": "www",
+        "password": "securepass",
+        "home": "/home/www",
+        "ssh_keys": ["ssh public key"]
+    },
+    "vhosts": [
+		"www.site.com" , "site.com" , "dev.site.com"
+
+		],
+	"active_vhosts": [
+		"www.site.com" , "site.com"
+		],
+	
+    "run_list": [
+		"recipe[ubuntu::deactivete_apache]",
+        "recipe[ubuntu::useradd]",
+        "recipe[ubuntu::git-core]",
+        "recipe[ubuntu::nginx]",
+        "recipe[ubuntu::php-fpm]",
+		"recipe[ubuntu::varnish]",
+		"recipe[ubuntu::lsyncd]",
+        "recipe[ubuntu]"
+    ]
+}
